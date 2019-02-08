@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Glocal End Project Bootcamp
                 </div>
 
                 <div class="links">
