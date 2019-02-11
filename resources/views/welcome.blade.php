@@ -1,3 +1,3 @@
 @extends('layout')
 
-@section('pageheader', 'Glocal Products')
+{{-- @section('pageheader', 'Glocal Products') --}}
