@@ -66,6 +66,10 @@
                                     </form>
                                 </div>
                             </li>
+                            <li class="nav-item">  <a class="navbar-brand" href="{{ url('/cart') }}">
+                                <img style="width:25px;height:25px" src=" {{ asset('images/cart.jpg') }} ">ShoppingCart </img>
+                            </a>
+                            </li>
                         @endguest
                     </ul>
                 </div>
