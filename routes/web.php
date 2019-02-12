@@ -21,3 +21,6 @@ Route::resource('categories', 'CategoryController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('cart', 'CartController');
+//Route::view('/cart', 'cart');
+//Route::view('/checkout', 'checkout');
