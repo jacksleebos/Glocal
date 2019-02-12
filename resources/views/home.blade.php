@@ -19,5 +19,11 @@
             </div>
         </div>
     </div>
+  <!--  <div class="amountDiv">
+
+            <input type="number" value="1" name="amount" >
+            <button name="Add" onclick=>Add To Cart</button>
+    </div> -->
+
 </div>
 @endsection
