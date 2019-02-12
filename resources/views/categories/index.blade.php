@@ -14,7 +14,9 @@
       {{ session()->get('success') }}
     </div><br />
   @endif
-  <div>Categories</div>
+  {{-- href to create category --}}
+  <a href="{{ route('categories.create')}}" class="btn btn-primary">Categories +  </a></td>
+
   <table class="table table-striped">
     <thead>
         <tr>

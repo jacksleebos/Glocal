@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Add Share
+    Add Category
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -20,20 +20,20 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('shares.store') }}">
-          <div class="form-group">
+      <form method="post" action="{{ route('categories.store') }}">
+
+        <div class="form-group">
               @csrf
-              <label for="name">Share Name:</label>
-              <input type="text" class="form-control" name="share_name"/>
+              <label for="name">Category name:</label>
+              <input type="text" class="form-control" name="categoryName"/>
           </div>
+
           <div class="form-group">
-              <label for="price">Share Price :</label>
-              <input type="text" class="form-control" name="share_price"/>
+              <label for="description">Category description:</label>
+              <input type="text" class="form-control" name="categoryDescription"/>
           </div>
-          <div class="form-group">
-              <label for="quantity">Share Quantity:</label>
-              <input type="text" class="form-control" name="share_qty"/>
-          </div>
+
+
           <button type="submit" class="btn btn-primary">Add</button>
       </form>
   </div>
