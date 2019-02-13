@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('categories', 'CategoryController');
-
+Route::resource('stores', 'StoreController');
 
 Auth::routes();
 
