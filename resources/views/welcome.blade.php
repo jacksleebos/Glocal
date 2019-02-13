@@ -80,9 +80,31 @@
             @endif
 
             <div class="content">
+                {{-- Place for animated logo --}}
+
                 <div class="title m-b-md">
                     GloCal Worldwide
                 </div>
+
+
+                <div class="links">
+                    {{-- Keep this for testing what you have build --}}
+
+                    <a href="/categories">Categories</a>
+                    <a href="https://appdividend.com/2018/09/06/laravel-5-7-crud-example-tutorial/">Laravel CRUD example tutorial</a>
+                    <a href="https://appdividend.com/2018/01/04/laravel-one-to-many-relationship-tutorial/">Laravel one to many relationship tutorial</a>
+
+
+
+
+
+
+                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+
+
+
 
 
             </div>
