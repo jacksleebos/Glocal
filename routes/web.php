@@ -23,9 +23,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-/* this is needed for changes in the user edit.blade */
-// Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
-// Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
+Route::get('/auth/{user}/edit','UserController@edit');
+
+Route::patch('/auth/{user}/update', ['as' =>'auth.update', 'uses' => 'UserController@update']);
 
 
 Route::resource('cart', 'CartController');
