@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Add a new store
+    Add Category
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -20,7 +20,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('stores.store') }}">
+      <form method="post" action="{{ route('orders.store') }}">
 
         <div class="form-group">
               @csrf
