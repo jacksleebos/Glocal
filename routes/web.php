@@ -1,5 +1,6 @@
 <?php
-
+use App\Product;
+use Illuminate\Support\Facades\Input;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,5 +31,15 @@ Route::patch('/auth/{user}/update', ['as' =>'auth.update', 'uses' => 'UserContro
 
 Route::resource('cart', 'CartController');
 Route::resource('stores', 'StoreController');
+Route::resource('orders', 'OrderController');
+
 //Route::view('/cart', 'cart');
 //Route::view('/checkout', 'checkout');
+
+Route::any('/search',function(){
+    $q = Input::get ( 'q' );
+    $products = Product::where('productName','LIKE','%'.$q.'%')->get();
+    if(count($products) > 0)
+    return view('/orders/create')->withDetails($products)->withQuery ( $q );
+    else return view ('/orders/create')->withMessage('No Products found. Try to search again !');
+});
