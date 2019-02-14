@@ -97,7 +97,10 @@
                     {{-- Keep this for testing what you have build --}}
 
                     <a href="/categories">Categories CRUD</a>
-                    <a href="/products">Products R</a>
+                    <a href="/products">Products CRUD</a>
+                    <br>
+                    <a href="/stores">Stores CRUD</a>
+
 
                     <br><br><br>
                     <a href="https://appdividend.com/2018/09/06/laravel-5-7-crud-example-tutorial/">Laravel CRUD example tutorial</a>
