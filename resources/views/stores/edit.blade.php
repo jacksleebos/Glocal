@@ -20,18 +20,24 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('categories.update', $category->id) }}">
+      <form method="post" action="{{ route('stores.update', $store->id) }}">
         @method('PATCH')
         @csrf
         <div class="form-group">
-          <label for="name">Category name:</label>
-          <input type="text" class="form-control" name="categoryName" value={{ $category->categoryName }} />
+          <label for="name">store name:</label>
+          <input type="text" class="form-control" name="name" value={{ $store->name }} />
         </div>
         <div class="form-group">
-          <label for="description">Category description:</label>
-          <input type="text" class="form-control" name="categoryDescription" value={{ $category->categoryDescription }} />
+            <label for="number">store PhoneNumber:</label>
+            <input type="text" class="form-control" name="number" value={{ $store->number }} />
+          </div>
+        <div class="form-group">
+          <label for="address">store Address:</label>
+          <input type="text" class="form-control" name="address" value={{ $store->address }} />
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
+
+
     </form>
   </div>
 </div>
