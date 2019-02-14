@@ -81,6 +81,12 @@
 
             <div class="content">
                 {{-- Place for animated logo --}}
+                <image img src="/images/glocal.png" alt="Logo"></image>
+
+
+
+
+
 
                 <div class="title m-b-md">
                     GloCal Worldwide
@@ -90,15 +96,14 @@
                 <div class="links">
                     {{-- Keep this for testing what you have build --}}
 
-                    <a href="/categories">Categories</a>
+                    <a href="/categories">Categories CRUD</a>
+                    <a href="/products">Products R</a>
+
+                    <br><br><br>
                     <a href="https://appdividend.com/2018/09/06/laravel-5-7-crud-example-tutorial/">Laravel CRUD example tutorial</a>
                     <a href="https://appdividend.com/2018/01/04/laravel-one-to-many-relationship-tutorial/">Laravel one to many relationship tutorial</a>
 
-
-
-
-
-
+                    <br>
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
