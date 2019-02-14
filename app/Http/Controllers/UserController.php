@@ -29,7 +29,7 @@ class UserController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email',
             'password' => 'required|min:6|confirmed'
         ]);
         $user= User::find($id);
