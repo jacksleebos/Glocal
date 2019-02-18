@@ -15,6 +15,11 @@ class ProductController extends Controller
     public function index()
     {
         //
+       //--------------------------------------------------------------------
+       $products = Product::all();
+       return view('products.index', compact('products'));
+       //--------------------------------------------------------------------
+
     }
 
     /**
@@ -24,7 +29,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        //--------------------------------------------------------------------
+        return view('products.create');
+        //--------------------------------------------------------------------
+
     }
 
     /**
@@ -36,6 +44,26 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        //----------------------------------------------------------------
+        $request->validate([
+            'productName'=>'required',
+            'productPrice'=> 'required'
+             ]);
+
+          $share = new Product([
+            'productName' => $request->get('productName'),
+            'productCategory' => $request->get('productCategory'),
+            'productDescription' => $request->get('productDescription'),
+            'productPrice' => $request->get('productPrice'),
+            'productImage' => $request->get('productImage')
+
+          ]);
+          $share->save();
+          return redirect('/products')->with('success', 'Product has been added');
+        //----------------------------------------------------------------
+
+
+
     }
 
     /**
@@ -55,9 +83,15 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         //
+        //--------------------------------------------------------------------
+        $product = Product::find($id);
+
+        return view('products.edit', compact('product'));
+        //--------------------------------------------------------------------
+
     }
 
     /**
@@ -67,9 +101,33 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+
+
+//    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
+
     {
-        //
+    //------------------------------------------------------------------------------------------------
+    $request->validate([
+        //'productName'=>'required',
+        'productPrice'=> 'required'
+              ]);
+
+        $product = Product::find($id);
+        $product->productName = $request->get('productName');
+        $product->productCategory = $request->get('productCategory');
+        $product->productDescription = $request->get('productDescription');
+        $product->productPrice = $request->get('productPrice');
+        $product->productImage = $request->get('productImage');
+
+        $product->save();
+
+        return redirect('/products')->with('success', 'Product has been updated');
+     //------------------------------------------------------------------------------------------------
+
+
+
+
     }
 
     /**
@@ -78,8 +136,16 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
         //
+        //------------------------------------------------------------------------------------------------
+        $product = Product::find($id);
+        $product->delete();
+        return redirect('/products')->with('success', 'Product has been deleted Successfully');
+        //------------------------------------------------------------------------------------------------
+
+
+
     }
 }

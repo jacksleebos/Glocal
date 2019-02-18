@@ -15,26 +15,32 @@
     </div><br />
   @endif
   {{-- href to create category --}}
-  <a href="{{ route('categories.create')}}" class="btn btn-primary">Categories +  </a></td>
+  <a href="{{ route('products.create')}}" class="btn btn-primary">Products +  </a></td>
 
   <table class="table table-striped">
     <thead>
         <tr>
           <td>ID</td>
           <td>Name</td>
-          <td>Description</td>
+          <td>Category</td>
           <td colspan="2">Action</td>
         </tr>
     </thead>
     <tbody>
-        @foreach($categories as $category)
+        @foreach($products as $product)
         <tr>
-            <td>{{$category->id}}</td>
-            <td>{{$category->categoryName}}</td>
-            <td>{{$category->categoryDescription}}</td>
-            <td><a href="{{ route('categories.edit',$category->id)}}" class="btn btn-primary">Edit</a></td>
+            <td>{{$product->id}}</td>
+            <td>{{$product->productName}}</td>
+
+            <td>{{$product->productCategory}}</td>
+            <td>{{$product->productDescription}}</td>
+            <td>{{$product->productPrice}}</td>
+            <td>{{$product->productImage}}</td>
+
+
+            <td><a href="{{ route('products.edit',$product->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('categories.destroy', $category->id)}}" method="post">
+                <form action="{{ route('products.destroy', $product->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

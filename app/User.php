@@ -9,7 +9,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    const ADMIN_TYPE = 'admin';
+    const DEFAULT_TYPE = 'default';
+    public function isAdmin()    {
+        return $this->type === self::ADMIN_TYPE;
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +40,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function orders()
+{
+	return $this->hasMany('App\Order');
+}
+
 }

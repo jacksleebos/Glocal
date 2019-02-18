@@ -20,17 +20,63 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('categories.update', $category->id) }}">
+      <form method="post" action="{{ route('products.update', $product->id) }}">
         @method('PATCH')
         @csrf
+
+
         <div class="form-group">
-          <label for="name">Category name:</label>
-          <input type="text" class="form-control" name="categoryName" value={{ $category->categoryName }} />
+          <label for="name">Product name:</label>
+          <input type="text" class="form-control" name="productName" value={{ $product->productName }} />
         </div>
+
+
         <div class="form-group">
-          <label for="description">Category description:</label>
-          <input type="text" class="form-control" name="categoryDescription" value={{ $category->categoryDescription }} />
+          <label for="category">Product category:</label>
+          <input type="integer" class="form-control" name="productCategory" value={{ $product->productCategory }} />
         </div>
+
+
+        <div class="form-group">
+          <label for="description">Product description:</label>
+          <input type="text" class="form-control" name="productDescription" value={{ $product->productDescription }} />
+        </div>
+
+
+        <div class="form-group">
+          <label for="price">Product price:</label>
+          <input type="float" class="form-control" name="productPrice" value={{ $product->producPrice }} />
+        </div>
+
+
+        <div class="form-group">
+            <label for="image">Product image:</label>
+            <input type="text" class="form-control" name="productImage" value={{ $product->productPrice }} />
+          </div>
+
+
+
+
+
+
+{{--
+        $table->string('productName');
+        $table->integer('productCategory');
+        $table->string('productDescription');
+        $table->float('productPrice');
+        $table->string('productImage');
+
+ --}}
+
+
+
+
+
+
+
+
+
+
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
   </div>
