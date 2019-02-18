@@ -3,7 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -64,6 +68,8 @@
         </style>
     </head>
     <body>
+
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -96,6 +102,12 @@
                 <div class="links">
                     {{-- Keep this for testing what you have build --}}
 
+<<<<<<< HEAD
+                    <a href="/categories">Categories</a>
+                    <a href="https://appdividend.com/2018/09/06/laravel-5-7-crud-example-tutorial/">Laravel CRUD example tutorial</a>
+                    <a href="https://appdividend.com/2018/01/04/laravel-one-to-many-relationship-tutorial/">Laravel one to many relationship tutorial</a>
+
+=======
                     <a href="/categories">Categories CRUD</a>
                     <a href="/products">Products CRUD</a>
                     <br>
@@ -107,6 +119,7 @@
                     <a href="https://appdividend.com/2018/01/04/laravel-one-to-many-relationship-tutorial/">Laravel one to many relationship tutorial</a>
 
                     <br>
+>>>>>>> 729625b969cf29eee96a34d83d5328578c9c7cfa
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
