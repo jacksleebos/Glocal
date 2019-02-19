@@ -32,6 +32,8 @@ Route::patch('/auth/{user}/update', ['as' =>'auth.update', 'uses' => 'UserContro
 Route::resource('cart', 'CartController');
 Route::resource('stores', 'StoreController');
 Route::resource('orders', 'OrderController');
+Route::resource('supplier', 'SupplierController');
+
 
 //Route::view('/cart', 'cart');
 //Route::view('/checkout', 'checkout');
