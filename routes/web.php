@@ -20,6 +20,35 @@ Route::resource('categories', 'CategoryController');
 Route::resource('products', 'ProductController');
 Route::resource('favorites', 'FavoriteController');
 
+Route::resource('products/admin', 'ProductController');
+
+// ---------------------------------------------------------------------------------------------
+/* Route::get('/productsx', function () {
+    $products=Product::all();
+    return view('products.show' )->withDetails($products);
+});
+ */// ---------------------------------------------------------------------------------------------
+
+
+
+/*
+Route::get('/productsx', function () {
+    $products=Product::all();
+    return view('products.users.test' )->withDetails($products);
+});
+
+ */
+
+
+Route::get('/products2order', function () {
+    $products=Product::all();
+    return view('products.users.listview' )->withDetails($products);
+});
+
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
