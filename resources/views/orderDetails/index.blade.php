@@ -14,8 +14,8 @@
       {{ session()->get('success') }}
     </div><br />
   @endif
-  {{-- href to create store --}}
-  <a href="{{ route('stores.store')}}" class="btn btn-primary">Add a New Order</a></td>
+  {{-- href to create orderDetail
+  <a href="{{ route('orderDetails.store')}}" class="btn btn-primary">Add a New Order</a></td>--}}
 
   <table class="table table-striped">
     <thead>

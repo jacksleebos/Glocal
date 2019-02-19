@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Add Category
+    Add Product
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -20,26 +20,30 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('ordersDetails.store') }}">
+      <form method="post" action="{{ route('products.store') }}">
 
         <div class="form-group">
               @csrf
-              <label for="name">Product Name: {{ $product->name }}</label>
-              <input type="text" class="form-control" name="name" value={{ $product->id }} hidden />
+              <label for="name">Product name:</label>
+              <input type="text" class="form-control" name="productName"/>
           </div>
-          <div class="form-group">
-            <label for="number">Amount:</label>
-            <input type="text" class="form-control" name="amount"/>
-        </div>
+
+
 
           <div class="form-group">
-              <label for="address">Price: value={{ $product->price }}</label>
-              <input type="text" class="form-control" name="price" value={{ $product->price }}/>
+                <label for="description">Product description:</label>
+                <input type="text" class="form-control" name="productDescription"/>
           </div>
+
           <div class="form-group">
-            <label for="address">order:</label>
-            <input type="text" class="form-control" name="order_id"/>
-        </div>
+                <label for="price">Product price:</label>
+                <input type="float" class="form-control" name="productPrice"/>
+          </div>
+
+          <div class="form-group">
+                <label for="image">Product image:</label>
+                <input type="text" class="form-control" name="productImage"/>
+          </div>
 
 
           <button type="submit" class="btn btn-primary">Add</button>

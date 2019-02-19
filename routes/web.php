@@ -60,7 +60,9 @@ Route::patch('/auth/{user}/update', ['as' =>'auth.update', 'uses' => 'UserContro
 
 Route::resource('cart', 'CartController');
 Route::resource('stores', 'StoreController');
-Route::resource('orders', 'OrderController');
+
+Route::resource('supplier', 'SupplierController');
+
 
 //Route::view('/cart', 'cart');
 //Route::view('/checkout', 'checkout');
@@ -69,6 +71,15 @@ Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
 
+
+    Route::get('/', function () {
+        return view('welcome');
+    });;
+    Route::resource('payments', 'PaymentController');
+    Auth::routes();
+
+
+
 Route::any('/search',function(){
     $q = Input::get ( 'q' );
     $products = Product::where('productName','LIKE','%'.$q.'%')->get();
@@ -76,3 +87,19 @@ Route::any('/search',function(){
     return view('/orders/create')->withDetails($products)->withQuery ( $q );
     else return view ('/orders/create')->withMessage('No Products found. Try to search again !');
 });
+
+Route::get('/orderDetails/index','OrderDetailsController@index');
+Route::post('/orderDetails/index','OrderDetailsController@store');
+Route::get('/orderDetails/create','OrderDetailsController@create');
+Route::get('/orderDetails/{order}','OrderDetailsController@show');
+Route::get('/orderDetails/{order}/edit','OrderDetailsController@edit');
+Route::patch('/orderDetails/{order}','OrderDetailsController@update');
+Route::delete('/orderDetails/{order}','OrderDetailsController@destroy');
+
+Route::get('/orders/index','OrderController@index');
+Route::post('/orders/index','OrderController@store');
+Route::get('/orders/create','OrderController@create');
+Route::get('/orders/{order}','OrderController@show');
+Route::get('/orders/{order}/edit','OrderController@edit');
+Route::patch('/orders/{order}','OrderController@update');
+Route::delete('/orders/{order}','OrderController@destroy');
