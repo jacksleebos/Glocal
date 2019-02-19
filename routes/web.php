@@ -31,7 +31,7 @@ Route::patch('/auth/{user}/update', ['as' =>'auth.update', 'uses' => 'UserContro
 
 Route::resource('cart', 'CartController');
 Route::resource('stores', 'StoreController');
-Route::resource('orders', 'OrderController');
+
 Route::resource('supplier', 'SupplierController');
 
 
@@ -49,3 +49,19 @@ Route::any('/search',function(){
     return view('/orders/create')->withDetails($products)->withQuery ( $q );
     else return view ('/orders/create')->withMessage('No Products found. Try to search again !');
 });
+
+Route::get('/orderDetails/index','OrderDetailsController@index');
+Route::post('/orderDetails/index','OrderDetailsController@store');
+Route::get('/orderDetails/create','OrderDetailsController@create');
+Route::get('/orderDetails/{order}','OrderDetailsController@show');
+Route::get('/orderDetails/{order}/edit','OrderDetailsController@edit');
+Route::patch('/orderDetails/{order}','OrderDetailsController@update');
+Route::delete('/orderDetails/{order}','OrderDetailsController@destroy');
+
+Route::get('/orders/index','OrderController@index');
+Route::post('/orders/index','OrderController@store');
+Route::get('/orders/create','OrderController@create');
+Route::get('/orders/{order}','OrderController@show');
+Route::get('/orders/{order}/edit','OrderController@edit');
+Route::patch('/orders/{order}','OrderController@update');
+Route::delete('/orders/{order}','OrderController@destroy');

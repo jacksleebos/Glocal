@@ -19,11 +19,12 @@
             </div>
         </div>
     </div>
-  <!--  <div class="amountDiv">
+   <div class="amountDiv">
 
             <input type="number" value="1" name="amount" >
-            <button name="Add" onclick=>Add To Cart</button>
-    </div> -->
+
+            <a class="btn btn-primary" href="{{ route('orders.store')}}" >Add To Shopping Cart</a></td>
+    </div>
 
 </div>
 @endsection
