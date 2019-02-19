@@ -106,6 +106,7 @@
                     <a href="/products">Products CRUD</a>
                     <br>
                     <a href="/stores">Stores CRUD</a>
+                    <a href="/suppliers">Suppliers CRUD</a>
 
 
                     <br><br><br>
