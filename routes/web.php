@@ -62,10 +62,10 @@ Route::any('/search',function(){
 Route::get('/orderDetails/index','OrderDetailsController@index');
 Route::post('/orderDetails/index','OrderDetailsController@store');
 Route::get('/orderDetails/create','OrderDetailsController@create');
-Route::get('/orderDetails/{order}','OrderDetailsController@show');
-Route::get('/orderDetails/{order}/edit','OrderDetailsController@edit');
-Route::patch('/orderDetails/{order}','OrderDetailsController@update');
-Route::delete('/orderDetails/{order}','OrderDetailsController@destroy');
+Route::get('/orderDetails/{product}','OrderDetailsController@show');
+Route::get('/orderDetails/{product}/edit','OrderDetailsController@edit');
+Route::patch('/orderDetails/{product}','OrderDetailsController@update');
+Route::delete('/orderDetails/{product}','OrderDetailsController@destroy');
 
 Route::get('/orders/index','OrderController@index');
 Route::post('/orders/index','OrderController@store');
