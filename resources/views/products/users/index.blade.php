@@ -15,7 +15,7 @@
     </div><br />
   @endif
   {{-- href to create category --}}
-  <a href="{{ route('products.create')}}" class="btn btn-primary">Products +  </a></td>
+  <a href="{{ route('products.create')}}" class="btn btn-primary">Products User+  </a></td>
 
   <table class="table table-striped">
     <thead>
