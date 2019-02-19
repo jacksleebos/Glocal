@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::resource('categories', 'CategoryController');
 Route::resource('products', 'ProductController');
+Route::resource('favorites', 'FavoriteController');
 
 Auth::routes();
 
@@ -34,6 +35,10 @@ Route::resource('orders', 'OrderController');
 
 //Route::view('/cart', 'cart');
 //Route::view('/checkout', 'checkout');
+
+Route::get('/admin', 'AdminController@admin')
+    ->middleware('is_admin')
+    ->name('admin');
 
 Route::any('/search',function(){
     $q = Input::get ( 'q' );
